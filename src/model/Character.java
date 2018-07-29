@@ -1,4 +1,8 @@
-public abstract class Character {
+package model;
+
+import java.util.Scanner;
+
+public class Character {
 
     public int attackPoints;
     public int defensePoints;
@@ -8,11 +12,17 @@ public abstract class Character {
     protected String skillName;
     protected Profession professionName;
 
+    public int level;
+    public int experience;
 
     public Character(int AP, int DP, int maxHP) {
         this.attackPoints = AP;
         this.defensePoints = DP;
         this.maxHP = maxHP;
+    }
+
+    public Character() {
+
     }
 
     public void attack(Character enemy) {
@@ -62,6 +72,12 @@ public abstract class Character {
 
     public String getCharacterName() {
         return characterName;
+    }
+
+    public void setCharacterName() {
+        System.out.println("What is your name Adventurer?");
+        Scanner name = new Scanner(System.in);
+        this.characterName = name.nextLine();
     }
 
     public String getSkillName() {
